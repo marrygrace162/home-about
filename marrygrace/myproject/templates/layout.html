@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            Sample App
+        {% endblock %}
+    </title>
+    <script src="{% static 'js/main.js' %}" defer></script>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/posts">Post</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content area -->
+    <div class="container">
+        {% block content %}
+        <!-- Default content for the page -->
+        <h1>Welcome to the Sample App!</h1>
+        <p>Check out our <a href="/about">About</a> page to learn more.</p>
+        <button>Learn More</button>
+        {% endblock %}
+    </div>
+</body>
+</html>
